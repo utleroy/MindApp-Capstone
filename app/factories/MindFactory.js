@@ -18,3 +18,7 @@ var mindItem = function(newItem){
     });
   }
 });
+
+var addFileToRoot = function(addedObject) {
+	console.log(addedObject);
+}
