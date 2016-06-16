@@ -1,1 +1,8 @@
-thing.json
+{	
+	"items": {
+		"item0": {
+			"D0": "test",
+			"uid": ""
+		}
+	}
+}
