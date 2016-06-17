@@ -20,3 +20,16 @@ body {
     margin-bottom: .1em; }
   .loginPage button {
     margin-top: .6em; }
+
+.wrap {
+  display: inline-block;
+}
+
+#div1, #div2, #div3, #div4 {
+  float:left;  
+  width:100px; 
+  height:35px; 
+  margin:10px;
+  padding:10px;
+  border:1px solid #aaaaaa;
+}
