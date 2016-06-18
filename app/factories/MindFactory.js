@@ -1,12 +1,35 @@
 'use strict';
-app.factory("mindStorage", function($q, $http, firebaseURL, AuthFactory){
+app3.factory("MindFactory", function($q, $http, firebaseURL, AuthFactory){
 
-var mindItem = function(newItem){
+
+  var mindItem = function(){
+    var items = [];
+    console.log(items)
+    return $q(function(resolve, reject){
+      $http.get(firebaseURL + "items.json")
+      .success(function(itemObject){
+       var itemCollection = itemObject;
+       Object.keys(itemCollection).forEach(function(key){
+        itemCollection[key].id=key;
+        items.push(itemCollection[key]);
+      });
+       resolve(items);
+     })
+      .error(function(error){
+       reject(error);
+     });
+    });
+  };
+
+
+  var postNewNote = function(newNote){
+    let user = AuthFactory.getUser();
+    console.log(user)
     return $q(function(resolve, reject) {
       $http.post(
-        firebaseURL + "thing.json",
+        firebaseURL + "items.json",
         JSON.stringify({
-          D0: newItem.D0,
+          note: newNote.note,
           uid: user.uid
         })
         )
@@ -16,23 +39,21 @@ var mindItem = function(newItem){
         }
         );
     });
-  }
-});
+  };
 
-var addFileToRoot = function(addedObject) {
-	console.log(addedObject);
-}
 
-function allowDrop(ev) {
+
+  function allowDrop(ev) {
     ev.preventDefault();
-}
+  }
 
-function drag(ev) {
+  function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-}
+  }
 
-function drop(ev) {
+  function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
-}
+  }
+});

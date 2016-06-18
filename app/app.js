@@ -2,13 +2,11 @@
 
 
 var app = angular.module("MindApp", ["ngRoute"]);
-app.controller("MyControllerA", function($scope) {
-  $scope.name = "Bob A";
+app.controller("MindController", function($scope) {
 });
 
 var app2 = angular.module("MindApp2", ["ngDragDrop"]);
-app2.controller("MyControllerB", function($scope) {
-  $scope.name = "Steve B";
+app2.controller("DragDropController", function($scope) {
 });
 
 var app3 = angular.module("CombineModule", ["MindApp", "MindApp2"])
@@ -26,7 +24,7 @@ let isAuth = (AuthFactory) => new Promise ((resolve, reject) => {
 	}
 });
 
-app.config(function($routeProvider){
+app3.config(function($routeProvider){
 	$routeProvider.
 	when('/login', {
 		templateUrl: 'partials/login.html',
@@ -44,7 +42,7 @@ app.config(function($routeProvider){
 	otherwise('/');
 
 });
-app.run(($location) => {
+app3.run(($location) => {
 	let mindAppRef = new Firebase("https://mindapp-mindmap.firebaseio.com/");
 	mindAppRef.unauth();
 	mindAppRef.onAuth(authData => {

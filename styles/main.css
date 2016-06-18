@@ -13,13 +13,12 @@ body {
   color: white; }
 
 .loginPage {
-  border: solid black 2px;
   padding: 1em;
   width: 30em;
   margin: 0 auto;
   text-align: center; }
 
-.loginPage h3 {
+.loginPage h5 {
   margin-bottom: .1em; }
 
 .loginPage button {
@@ -43,3 +42,7 @@ body {
   border-radius: 3px;
   padding: 2px;
   margin-left: 3px; }
+
+.thunmbnail {
+  background-color: red;
+  border: 1px solid black; }
