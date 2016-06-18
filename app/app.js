@@ -1,15 +1,30 @@
-var app = angular.module("MindApp", ["ngRoute"]) 
+// var app = angular.module("MindApp", ["ngRoute"]) 
+
+
+var app = angular.module("MindApp", ["ngRoute"]);
+app.controller("MyControllerA", function($scope) {
+  $scope.name = "Bob A";
+});
+
+var app2 = angular.module("MindApp2", ["ngDragDrop"]);
+app2.controller("MyControllerB", function($scope) {
+  $scope.name = "Steve B";
+});
+
+var app3 = angular.module("CombineModule", ["MindApp", "MindApp2"])
+
+
 .constant("firebaseURL","https://mindapp-mindmap.firebaseio.com/");
 
 let isAuth = (AuthFactory) => new Promise ((resolve, reject) => {
 	if(AuthFactory.isAuthenticated()){
-		console.log("user is authenticated, resolve route promise")
+		console.log("user is authenticated, resolve route promise");
 		resolve();
 	} else {
 		console.log("user is not authenticated, reject route promise");
 		reject();
 	}
-})
+});
 
 app.config(function($routeProvider){
 	$routeProvider.
@@ -36,5 +51,5 @@ app.run(($location) => {
 		if(!authData){
 			$location.path("/login");
 	}
-})
-})
+});
+});
