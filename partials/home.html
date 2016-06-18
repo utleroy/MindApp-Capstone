@@ -1,70 +1,43 @@
-<h3>Mind View</h3>
+<h4>Mind View</h4>
 
 
 <div class="containers">
-<div class="row">
-      
-      <div class="col s6">
+	<div class="row">
+		<div class="col s6" id="left-container">
+			<div class="waves-effect waves-light btn" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-controller="HomeCtrl" ng-model="list1" jqyoui-draggable="{animate:true}" ng-hide="!list1.title">{{list1.title}}</div>
 
-      <div class="valign">
 
-      <div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" id="drag1">project-name/
-      	<!-- <input placeholder="name file" id="first_name" type="text" class="validate"> -->
-			<!-- <img src="img/indexBtn.png" draggable="true" ondragstart="drag(event)" id="drag1"> -->
+		</div>
+	</div>
+
+	<div class="col s6">
+
+
+		<div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable style='height:50px;'>
+			<div class="waves-effect waves-light btn" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
 		</div>
 
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+		<div class="row">
+			<form class="col s12">
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea id="textarea1" class="materialize-textarea" ng-model="newNote.note"></textarea>
+						<label for="textarea1">Add Notes Here</label>
+					</div>
+					<div class="input-field col s12">
+						<div class="waves-effect waves-light btn">Edit
+						</div>
+						<div class="waves-effect waves-light btn">Delete
+						</div>
+						<div class="waves-effect waves-light btn" ng-click="addNewNote()">Save
+						</div>
+					</div>
+				</form>
+			</div>
+
 		</div>
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
-		</div>
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
-		</div>
-      </div>
-
-      <div class="valign">
-
-      <div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" id="drag2">index
-      	<!-- <input placeholder="name file" id="first_name" type="text" class="validate"> -->
-			<!-- <img src="img/indexBtn.png" draggable="true" ondragstart="drag(event)" id="drag1"> -->
-		</div>
-
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
-		</div>
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
-		</div>
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
-		</div>
-      </div>
-
-    <div class="valign">
-
-      <div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" id="drag3">styles/
-      	<!-- <input placeholder="name file" id="first_name" type="text" class="validate"> -->
-			<!-- <img src="img/indexBtn.png" draggable="true" ondragstart="drag(event)" id="drag1"> -->
-		</div>
-
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
-		</div>
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
-		</div>
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
-		</div>
-      </div>
-
-      <div class="valign">
-
-      <div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" id="drag4">CSS
-      	<!-- <input placeholder="name file" id="first_name" type="text" class="validate"> -->
-			<!-- <img src="img/indexBtn.png" draggable="true" ondragstart="drag(event)" id="drag1"> -->
-		</div>
-
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
-		</div>
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
-		</div>
-		<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
-		</div>
-      </div>
+	</div>
 
 
 
@@ -72,27 +45,125 @@
 
 
 
-      </div>
 
 
 
 
-      <div class="col s6">
 
-      <div class="row">
-    <form class="col s6">
-      <div class="row">
-        <div class="input-field col s6">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Add Notes Here</label>
-        </div>
-      </div>
-    </form>
-      </div>
-   
-      </div>
-      </div>
-      </div>
+
+
+
+
+
+
+
+
+
+<!-- <div class="containers">
+	<div class="row">
+
+		<div class="col s6" id="left-container">
+
+
+			<div class="valign">
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" id="drag1">D/
+				</div>
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>	
+				</div>
+				<div class="valign">
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" id="drag2">F/
+				</div>
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>	
+				</div>
+				<div class="valign">
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" id="drag3">D/
+				</div>
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>	
+				</div>
+				<div class="valign">
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" id="drag4">F/
+				</div>	
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn teal lighten-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				</div>
+			</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- <div class="col s4" id="right-container">
+			<div class="valign">
+
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+			</div>
+
+			<div class="valign">
+
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+			</div>
+
+			<div class="valign">
+
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+			</div>
+
+			<div class="valign">
+
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+				<div class="waves-effect waves-light btn" ondrop="drop(event)" ondragover="allowDrop(event)">
+				</div>
+			</div>
+
+		</div> -->
+
+
+
 
 
 

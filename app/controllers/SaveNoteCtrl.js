@@ -1,12 +1,7 @@
 "use strict";
 
 
-app3.controller('HomeCtrl', function($scope, NotesFactory) {
-	$scope.list1 = {title: "Test - Drag Me"};
-	console.log("list1");
-
-	$scope.list2 = {};
-
+app3.controller("SaveNoteCtrl", function($scope, $http, MindFactory) {
 	$scope.title = "New Note";
 	$scope.submitButtonText = "Add New Note";
 	$scope.newNote = {
@@ -16,16 +11,13 @@ app3.controller('HomeCtrl', function($scope, NotesFactory) {
 
 	$scope.addNewNote = function() {
 		console.log("add new")
-		NotesFactory.postNewNote($scope.newNote)
+		MindFactory.postNewItem($scope.newNote)
 			.success(function(response) {
 				console.log("clicked");
 				$location.url("/home");
 			});
-		}
+		
+		
+		
+	};
 });
-
-
-
-
-
-
