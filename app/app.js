@@ -1,15 +1,15 @@
 // var app = angular.module("MindApp", ["ngRoute"]) 
 
 
-var app = angular.module("MindApp", ["ngRoute"]);
-app.controller("MindController", function($scope) {
+var app3 = angular.module("MindApp", ["ngRoute"]);
+app3.controller("MindController", function($scope) {
 });
 
 var app2 = angular.module("MindApp2", ["ngDragDrop"]);
 app2.controller("DragDropController", function($scope) {
 });
 
-var app3 = angular.module("CombineModule", ["MindApp", "MindApp2"])
+var app = angular.module("CombineModule", ["MindApp", "MindApp2"])
 
 
 .constant("firebaseURL","https://mindapp-mindmap.firebaseio.com/");
@@ -24,7 +24,7 @@ let isAuth = (AuthFactory) => new Promise ((resolve, reject) => {
 	}
 });
 
-app3.config(function($routeProvider){
+app.config(function($routeProvider){
 	$routeProvider.
 	when('/login', {
 		templateUrl: 'partials/login.html',
@@ -42,7 +42,7 @@ app3.config(function($routeProvider){
 	otherwise('/');
 
 });
-app3.run(($location) => {
+app.run(($location) => {
 	let mindAppRef = new Firebase("https://mindapp-mindmap.firebaseio.com/");
 	mindAppRef.unauth();
 	mindAppRef.onAuth(authData => {
