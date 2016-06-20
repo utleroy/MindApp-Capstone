@@ -1,7 +1,7 @@
 "use strict";
 
 
-app3.controller('HomeCtrl', function($scope, NotesFactory) {
+app.controller('HomeCtrl', function($scope, $location, NotesFactory) {
 	$scope.list1 = {title: "Test - Drag Me"};
 	console.log("list1");
 
@@ -17,13 +17,13 @@ app3.controller('HomeCtrl', function($scope, NotesFactory) {
 	$scope.addNewNote = function() {
 		console.log("add new")
 		NotesFactory.postNewNote($scope.newNote)
-			.success(function(response) {
+			.then(function(response) {
 				console.log("clicked");
-				$location.url("/home");
+				$location.url("/");
 			});
 		}
 });
-
+	
 
 
 

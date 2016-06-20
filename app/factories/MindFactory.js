@@ -1,5 +1,6 @@
 'use strict';
-app3.factory("MindFactory", function($q, $http, firebaseURL, AuthFactory){
+
+app.factory("MindFactory", function($q, $http, firebaseURL, AuthFactory){
 
 
   var mindItem = function(){
@@ -18,26 +19,6 @@ app3.factory("MindFactory", function($q, $http, firebaseURL, AuthFactory){
       .error(function(error){
        reject(error);
      });
-    });
-  };
-
-
-  var postNewNote = function(newNote){
-    let user = AuthFactory.getUser();
-    console.log(user)
-    return $q(function(resolve, reject) {
-      $http.post(
-        firebaseURL + "items.json",
-        JSON.stringify({
-          note: newNote.note,
-          uid: user.uid
-        })
-        )
-      .success(
-        function(objectFromFirebase) {
-          resolve(objectFromFirebase);
-        }
-        );
     });
   };
 
