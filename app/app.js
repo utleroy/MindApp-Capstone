@@ -1,13 +1,11 @@
-// var app = angular.module("MindApp", ["ngRoute"]) 
-
-
-var app3 = angular.module("MindApp", ["ngRoute"]);
-app3.controller("MindController", function($scope) {
+var app1 = angular.module("MindApp", ["ngRoute"]);
+app1.controller("MindController", function($scope) {
 });
 
 var app2 = angular.module("MindApp2", ["ngDragDrop"]);
 app2.controller("DragDropController", function($scope) {
 });
+
 
 var app = angular.module("CombineModule", ["MindApp", "MindApp2"])
 
