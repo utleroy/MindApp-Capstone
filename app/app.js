@@ -37,7 +37,7 @@ app.config(function($routeProvider){
 		controller: 'HomeCtrl',
 		resolve: {isAuth}
 	}).
-	otherwise('/');
+	otherwise('/home');
 
 });
 app.run(($location) => {
