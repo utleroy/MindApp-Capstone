@@ -2,39 +2,158 @@
 
 <div class="container">
 	<div class="row">
-		<ul class="collapsible" data-collapsible="accordion">
-			<li>
-				<div class="collapsible-header">Project
-					<div class="collapsible-body">
-						<textarea id="textarea1" class="materialize-textarea" ng-model="newNote.note">
-							<p>		
-								{{items.newNote}}
-							</p>
-						</textarea>
-					</div>
-				</div>
-			</li>		
-			<a ng-click="editUserNote">Edit  | 
-			</a>
-			<div class="btn-floating btn-large waves-effect waves-light red"
-			ng-click="itemDelete()">Delete</div>
-			<div class="btn-floating btn-large waves-effect waves-light green" ng-click="addNewNote()">Save
+		<div class="collapsible" data-collapsible="accordion">
+			
+			<div class="collapsible-header"><i class="material-icons"></i>Folder</div>
+			<div class="collapsible-body">
+				<h6>User Note</h6>
+				<div ng-controller="FormController as formList">
+					<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
+					<a href="" ng-click="formList.archive()"></a>
+					<ul class="unstyled">
+						<li ng-repeat="form in items">
+						<div></div>
+							<label class="checkbox">
+								<input type="checkbox" ng-model="form.done">
+								<span class="done-{{form.done}}">{{form.text}}</span>
+							</label>
+						</li>
+					</ul>
+					<form ng-submit="formList.addForm()">
+						<input type="text" ng-model="formList.formText"  size="30"
+						placeholder="add new form here">
+						<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
+					</form>
+				</div> 
 			</div>
 		</li>
 		<li>
-			<div class="collapsible-header"><i class="material-icons"></i>CSS Folder</div>
-			<div class="collapsible-body"><p>Insert Notes Here</p></div>
-		</li>
-		<li>
-			<div class="collapsible-header"><i class="material-icons">
-			</i>Styles Folder
-		</div>
-		<div class="collapsible-body"><p>Insert Notes Here
-		</p>
-		</div>
+			<div class="collapsible-header"><i class="material-icons"></i>Styles Folder</div>
+		<div class="collapsible-body">
+			<h6>User Note</h6>
+			<div ng-controller="FormController as formList">
+				<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
+				<a href="" ng-click="formList.archive()"></a>
+				<ul class="unstyled">
+					<li ng-repeat="form in formList.forms">
+						<label class="checkbox">
+							<input type="checkbox" ng-model="form.done">
+							<span class="done-{{form.done}}">{{form.text}}</span>
+						</label>
+					</li>
+				<form ng-submit="formList.addForm()">
+					<input type="text" ng-model="formList.formText"  size="30"
+					placeholder="add new form here">
+					<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
+				</form>
+			</div>
+		</div>	
 	</div>
 </li>
-</div>
+</ul>
+
+<div class="collapsible" data-collapsible="accordion">
+			
+			<div class="collapsible-header"><i class="material-icons"></i>CSS File</div>
+			<div class="collapsible-body">
+				<h6>User Note</h6>
+				<div ng-controller="FormController as formList">
+					<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
+					<a href="" ng-click="formList.archive()"></a>
+					<ul class="unstyled">
+						<li ng-repeat="form in items">
+						<div></div>
+							<label class="checkbox">
+								<input type="checkbox" ng-model="form.done">
+								<span class="done-{{form.done}}">{{form.text}}</span>
+							</label>
+						</li>
+					</ul>
+					<form ng-submit="formList.addForm()">
+						<input type="text" ng-model="formList.formText"  size="30"
+						placeholder="add new form here">
+						<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
+					</form>
+				</div> 
+			</div>
+		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons"></i>Scripts Folder</div>
+		<div class="collapsible-body">
+			<h6>User Note</h6>
+			<div ng-controller="FormController as formList">
+				<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
+				<a href="" ng-click="formList.archive()"></a>
+				<ul class="unstyled">
+					<li ng-repeat="form in formList.forms">
+						<label class="checkbox">
+							<input type="checkbox" ng-model="form.done">
+							<span class="done-{{form.done}}">{{form.text}}</span>
+						</label>
+					</li>
+				<form ng-submit="formList.addForm()">
+					<input type="text" ng-model="formList.formText"  size="30"
+					placeholder="add new form here">
+					<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
+				</form>
+			</div>
+		</div>	
+	</div>
+</li>
+</ul>
+
+<div class="collapsible" data-collapsible="accordion">
+			
+			<div class="collapsible-header"><i class="material-icons"></i>Main Js</div>
+			<div class="collapsible-body">
+				<h6>User Note</h6>
+				<div ng-controller="FormController as formList">
+					<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
+					<a href="" ng-click="formList.archive()"></a>
+					<ul class="unstyled">
+						<li ng-repeat="form in items">
+						<div></div>
+							<label class="checkbox">
+								<input type="checkbox" ng-model="form.done">
+								<span class="done-{{form.done}}">{{form.text}}</span>
+							</label>
+						</li>
+					</ul>
+					<form ng-submit="formList.addForm()">
+						<input type="text" ng-model="formList.formText"  size="30"
+						placeholder="add new form here">
+						<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
+					</form>
+				</div> 
+			</div>
+		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons"></i>Styles Folder</div>
+		<div class="collapsible-body">
+			<h6>User Note</h6>
+			<div ng-controller="FormController as formList">
+				<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
+				<a href="" ng-click="formList.archive()"></a>
+				<ul class="unstyled">
+					<li ng-repeat="form in formList.forms">
+						<label class="checkbox">
+							<input type="checkbox" ng-model="form.done">
+							<span class="done-{{form.done}}">{{form.text}}</span>
+						</label>
+					</li>
+				<form ng-submit="formList.addForm()">
+					<input type="text" ng-model="formList.formText"  size="30"
+					placeholder="add new form here">
+					<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
+				</form>
+			</div>
+		</div>	
+	</div>
+</li>
+</ul>
+
+
+
 <script>            
 	$(document).ready(function() {
 		$('.collapsible').collapsible({
@@ -42,21 +161,3 @@
 		});
 	});
 </script>
-</ul>
-</div>
-
-
-<div class="row">
-	<form class="col s6">
-		<div class="row">
-			<div class="input-field col s12">
-				<textarea id="textarea1" class="materialize-textarea" ng-model="newNote.note"></textarea>
-				<label for="textarea1">Add Notes Here</label>
-			</div>
-			<div class="input-field col s12">
-				<div class="btn-floating btn-large waves-effect waves-light green" ng-click="addNewNote()">Save
-				</div>
-			</div>
-		</div>
-	</form>
-</div>

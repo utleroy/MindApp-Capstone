@@ -40,3 +40,7 @@ body {
   border-radius: 3px;
   padding: 2px;
   margin-left: 3px; }
+
+.done-true {
+  text-decoration: line-through;
+  color: grey; }

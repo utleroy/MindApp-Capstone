@@ -13,19 +13,18 @@ app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 		uid: ""
 	};
 
-	// $scope.display = function() {
-	// 		itemStorage.getItemList().then(function(data) {
-	// 			$scope.items = data;
-	// 			console.log(data);
-	// 		});
-	// 	}
-	// }
-	// $scope.display();
-
-
 	NotesFactory.getItemList().then(function(itemCollection){
 		$scope.items = itemCollection;
 	});
+
+	$scope.display = function() {
+		if ($location.path() === "/home") {
+			NotesFactory.getItemList().then(function(data) {
+				$scope.items = data;
+			});
+		}
+	}
+	$scope.display();
 
 
 	$scope.itemDelete = function(itemId){

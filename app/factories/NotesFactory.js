@@ -13,6 +13,7 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
         itemCollection[key].id=key;
         items.push(itemCollection[key]);
       });
+       console.log(items)
        resolve(items);
      })
       .error(function(error){
