@@ -16,10 +16,12 @@
 			<li>
 				<div class="collapsible-header"><i class="material-icons"></i>Index</div>
 				<div class="collapsible-body">
-					<h5>user note for index</h5>							
-					<div ng-repeat="note in userNotes"> 
-						<label><span>{{note.note}}</span></label>
-					</div>
+					<h5>user note for index</h5><div class="divider"></div>							
+					<div ng-repeat="note in userNotes">
+						<label>
+						<span>{{note.note}}</span>
+						</label>
+					</div><div class="divider"></div>
 
 						<input type="text" ng-model="newNote"  size="30"
 						placeholder="add new form here">
