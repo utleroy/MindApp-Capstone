@@ -29,6 +29,9 @@ body {
   margin-top: 2px;
   margin-bottom: 20px; }
 
+#left {
+  float: left; }
+
 #left-container {
   border: 1px solid;
   border-radius: 3px;
@@ -44,3 +47,6 @@ body {
 .done-true {
   text-decoration: line-through;
   color: grey; }
+
+.cont {
+  max-width: 400px; }
