@@ -1,235 +1,114 @@
 <h4>Mind View</h4>
 
+<!-- <div contenteditable="true">
+<style scoped>
+  [contenteditable="true"] { padding: 10px; outline: 2px dashed #CCC; width: 100px; }
+  [contenteditable="true"]:hover { outline: 2px dashed #0090D2; }
+</style>
+<p>
+	<div dragme class="waves-effect waves-light btn">drag</div>
+</p>
+</div> -->
 
 <div class="container">
 	<div class="row">
+		<div class="collapsible" data-collapsible="accordion">			
+			<li>
+				<div class="collapsible-header"><i class="material-icons"></i>Index</div>
+				<div class="collapsible-body">
+					<h5>user note for index</h5>							
+					<div ng-repeat="note in userNotes"> 
+						<label><span>{{note.note}}</span></label>
+					</div>
 
-<div class="col s6"><img src="img/minds.png"></div>
-    </div>
-
-		<div class="collapsible" data-collapsible="accordion">
-			
-			<div class="collapsible-header"><i class="material-icons"></i>Folder</div>
-			<div class="collapsible-body">
-				<h5>User Note</h5>
-				<div class="cont" ng-controller="FormController as formList">
-					<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
-					<a href="" ng-click="formList.archive()"></a>
-					<ul class="unstyled">
-						<li ng-repeat="form in items">
-						<div></div>
-							<label class="checkbox">
-								<input type="checkbox" ng-model="form.done">
-								<span class="done-{{form.done}}">{{form.text}}</span>
-							</label>
-						</li>
-					</ul>
-					<form ng-submit="formList.addForm()">
-					<div ng-controller="HomeCtrl">
-						<input type="text" ng-model="newNote.note"  size="30"
+						<input type="text" ng-model="newNote"  size="30"
 						placeholder="add new form here">
-						<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
-						</div>
-					</form>
-				</div> 
+						<input class="btn" type="submit" value="add" ng-click="addNewNote()">
+					
+				</div>
 			</div>
-		</li>
-		<li>
-			<div class="collapsible-header"><i class="material-icons"></i>Index</div>
-		<div class="collapsible-body">
-			<h5>user note for index</h5>
-			<div ng-controller="FormController as formList">
-				<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
-				<a href="" ng-click="formList.archive()"></a>
-				<ul class="unstyled">
-					<li ng-repeat="form in formList.forms">
-						<label class="checkbox">
-							<input type="checkbox" ng-model="form.done">
-							<span class="done-{{form.done}}">{{form.text}}</span>
-						</label>
-					</li>
-				<form ng-submit="formList.addForm()">
-					<input type="text" ng-model="formList.formText"  size="30"
-					placeholder="add new form here">
-					<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
-				</form>
-			</div>
-		</div>	
+		</div>
 	</div>
-</li>
-</ul>
 
-<div class="collapsible" data-collapsible="accordion">
-			
-			<div class="collapsible-header"><i class="material-icons"></i>CSS File</div>
-			<div class="collapsible-body">
-				<h5>User Note</h5>
-				<div ng-controller="FormController as formList">
-					<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
-					<a href="" ng-click="formList.archive()"></a>
-					<ul class="unstyled">
-						<li ng-repeat="form in items">
-						<div></div>
-							<label class="checkbox">
-								<input type="checkbox" ng-model="form.done">
-								<span class="done-{{form.done}}">{{form.text}}</span>
-							</label>
-						</li>
-					</ul>
-					<form ng-submit="formList.addForm()">
-						<input type="text" ng-model="formList.formText"  size="30"
-						placeholder="add new form here">
-						<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
-					</form>
-				</div> 
-			</div>
-		</li>
-		<li>
-			<div class="collapsible-header"><i class="material-icons"></i>Styles Folder</div>
-		<div class="collapsible-body">
-			<h5>user note for css</h5>
-			<div ng-controller="FormController as formList">
-				<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
-				<a href="" ng-click="formList.archive()"></a>
-				<ul class="unstyled">
-					<li ng-repeat="form in formList.forms">
-						<label class="checkbox">
-							<input type="checkbox" ng-model="form.done">
-							<span class="done-{{form.done}}">{{form.text}}</span>
-						</label>
-					</li>
-				<form ng-submit="formList.addForm()">
-					<input type="text" ng-model="formList.formText"  size="30"
-					placeholder="add new form here">
-					<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
-				</form>
-			</div>
-		</div>	
+
+
+
+
+
+
+
+
+
+	<!-- Modal Trigger -->
+	<a class="waves-effect waves-light btn modal-trigger" href="#modal1">_html</a>
+
+	<!-- Modal Structure -->
+	<div id="modal1" class="modal bottom-sheet">
+		<div class="modal-content">
+			<h4>Quick reference cards</h4>
+			<p>
+				<img src="img/html.png">
+				<img src="img/js.png">
+				<img src="img/html.png">
+			</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
 	</div>
-</li>
-</ul>
 
-<div class="collapsible" data-collapsible="accordion">
-			
-			<div class="collapsible-header"><i class="material-icons"></i>Scripts Folder</div>
-			<div class="collapsible-body">
-				<h5>User Note</h5>
-				<div ng-controller="FormController as formList">
-					<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
-					<a href="" ng-click="formList.archive()"></a>
-					<ul class="unstyled">
-						<li ng-repeat="form in items">
-						<div></div>
-							<label class="checkbox">
-								<input type="checkbox" ng-model="form.done">
-								<span class="done-{{form.done}}">{{form.text}}</span>
-							</label>
-						</li>
-					</ul>
-					<form ng-submit="formList.addForm()">
-						<input type="text" ng-model="formList.formText"  size="30"
-						placeholder="add new form here">
-						<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
-					</form>
-				</div> 
-			</div>
-		</li>
-		<li>
-			<div class="collapsible-header"><i class="material-icons"></i>Main Js</div>
-		<div class="collapsible-body">
-			<h5>user note for javascript</h5>
-			<div ng-controller="FormController as formList">
-				<span>{{formList.remaining()}} of {{formList.forms.length}}</span>
-				<a href="" ng-click="formList.archive()"></a>
-				<ul class="unstyled">
-					<li ng-repeat="form in formList.forms">
-						<label class="checkbox">
-							<input type="checkbox" ng-model="form.done">
-							<span class="done-{{form.done}}">{{form.text}}</span>
-						</label>
-					</li>
-				<form ng-submit="formList.addForm()">
-					<input type="text" ng-model="formList.formText"  size="30"
-					placeholder="add new form here">
-					<input class="btn-primary" type="submit" value="add" ng-click="addNewNote()">
-				</form>
-			</div>
-		</div>	
+	<!-- Modal Trigger -->
+	<a class="waves-effect waves-light btn modal-trigger" href="#modal1">_css</a>
+
+	<!-- Modal Structure -->
+	<div id="modal1" class="modal bottom-sheet">
+		<div class="modal-content">
+			<h4>Quick reference cards</h4>
+			<p>
+				<img src="img/html.png">
+				<img src="img/js.png">
+				<img src="img/html.png">
+			</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
 	</div>
-</li>
-</ul>
 
+	<!-- Modal Trigger -->
+	<a class="waves-effect waves-light btn modal-trigger" href="#modal1">_Angular</a>
 
-<!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">_html quick reference</a>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content">
-      <h4>Quick reference cards</h4>
-      <p>
-      	<img src="img/html.png">
-      	<img src="img/js.png">
-      	<img src="img/html.png">
-      </p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  </div>
-
-  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">_css quick reference</a>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content">
-      <h4>Quick reference cards</h4>
-      <p>
-      	<img src="img/html.png">
-      	<img src="img/js.png">
-      	<img src="img/html.png">
-      </p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  </div>
-
-  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">_Angular Directives</a>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content">
-      <h4>Quick reference cards</h4>
-      <p>
-      	<img src="img/html.png">
-      	<img src="img/js.png">
-      	<img src="img/html.png">
-      </p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  </div>
+	<!-- Modal Structure -->
+	<div id="modal1" class="modal bottom-sheet">
+		<div class="modal-content">
+			<h4>Quick reference cards</h4>
+			<p>
+				<img src="img/html.png">
+				<img src="img/js.png">
+				<img src="img/html.png">
+			</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
 
 
 
-<script>
-  $(document).ready(function(){
-    $('.modal-trigger').leanModal();
-  });
-  </script>
-
-
-
-
-
-<script>            
-	$(document).ready(function() {
-		$('.collapsible').collapsible({
-			accordion: true 
+	<script>
+		$(document).ready(function(){
+			$('.modal-trigger').leanModal();
 		});
-	});
-</script>
+	</script>
+
+
+
+
+
+	<script>            
+		$(document).ready(function() {
+			$('.collapsible').collapsible({
+				accordion: true 
+			});
+		});
+	</script>

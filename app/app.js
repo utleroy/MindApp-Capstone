@@ -37,11 +37,6 @@ app.config(function($routeProvider){
 		controller: 'HomeCtrl',
 		resolve: {isAuth}
 	}).
-	when('/form', {
-		templateUrl: 'partials/form.html',
-		controller: 'FormController',
-		resolve: {isAuth}
-	}).
 	otherwise('/home');
 
 });
