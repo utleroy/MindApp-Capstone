@@ -44,9 +44,5 @@ body {
   padding: 2px;
   margin-left: 3px; }
 
-.done-true {
-  text-decoration: line-through;
-  color: grey; }
-
 .cont {
   max-width: 400px; }

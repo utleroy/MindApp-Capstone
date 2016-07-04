@@ -24,8 +24,6 @@ app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 	};
 
 	$scope.addNewNote = function() {
-		// addForm();	
-		console.log("add new")
 		NotesFactory.postNewNote($scope.newNote)
 		.then(function(response) {
 			NotesFactory.getItemList().then(function(itemCollection){
