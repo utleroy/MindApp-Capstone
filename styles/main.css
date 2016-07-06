@@ -29,6 +29,9 @@ body {
   margin-top: 2px;
   margin-bottom: 20px; }
 
+#left {
+  float: left; }
+
 #left-container {
   border: 1px solid;
   border-radius: 3px;
@@ -40,3 +43,6 @@ body {
   border-radius: 3px;
   padding: 2px;
   margin-left: 3px; }
+
+.cont {
+  max-width: 400px; }

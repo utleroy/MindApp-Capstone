@@ -1,0 +1,20 @@
+
+
+    <h2>forms</h2>
+    <div ng-controller="FormController as formList">
+      <span>{{formList.remaining()}} of {{formList.forms.length}} remaining</span>
+      <a href="" ng-click="formList.archive()">archive</a>
+      <ul class="unstyled">
+        <li ng-repeat="form in formList.forms">
+          <label class="checkbox">
+            <input type="checkbox" ng-model="form.done">
+            <span class="done-{{form.done}}">{{form.text}}</span>
+          </label>
+        </li>
+      </ul>
+      <form ng-submit="formList.addForm()">
+        <input type="text" ng-model="formList.formText"  size="30"
+               placeholder="add new form here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>

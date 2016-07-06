@@ -7,7 +7,7 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
     let user = AuthFactory.getUser();
     return $q(function(resolve, reject){
      $http.get(`${firebaseURL}items.json?orderBy="uid"&equalTo="${user.uid}"`)
-      .success(function(itemObject){
+     .success(function(itemObject){
        var itemCollection = itemObject;
        Object.keys(itemCollection).forEach(function(key){
         itemCollection[key].id=key;
@@ -15,10 +15,10 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
       });
        resolve(items);
      })
-      .error(function(error){
+     .error(function(error){
        reject(error);
      });
-    });
+   });
   };
   
   var postNewNote = function(newNote){
@@ -28,7 +28,7 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
       $http.post(
         firebaseURL + "items.json",
         JSON.stringify({
-          note: newNote.note,
+          note: newNote,
           uid: user.uid
         })
         )
