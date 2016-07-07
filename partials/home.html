@@ -21,7 +21,7 @@
 						<div ng-repeat="note in userNotes">
 							<label>
 								<span>{{note.note}}
-									<a ng-href="#/home{{items.id}}" ng-click="itemDelete()">delete</a>
+									<a ng-href="#/home{{items.id}}" data-method="delete" ng-click="itemDelete(note.id)">del</a>
 								</span>
 							</label>
 						</div>

@@ -15,9 +15,10 @@ app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 	});
 
 	$scope.itemDelete = function(itemId){
+		console.log("itemId", itemId);
 		NotesFactory.deleteItem(itemId).then(function(response){
 			NotesFactory.getItemList().then(function(itemCollection){
-				$scope.items = itemCollection;
+				$scope.userNotes = itemCollection;
 				console.log("deleted clicked")
 			});
 		});
