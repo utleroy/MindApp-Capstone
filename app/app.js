@@ -37,12 +37,22 @@ app.config(function($routeProvider){
 		controller: 'HomeCtrl',
 		resolve: {isAuth}
 	}).
-	when('/items/new', {
+	when('/userNotes:itemId', {
+		templateUrl: 'partials/details.html',
+		controller: 'formViewCtrl',
+		resolve: {isAuth}
+	}).
+	when('/note:itemId/edit', {
+		templateUrl: 'partials/home.html',
+		controller: 'FormCtrl',
+		resolve: {isAuth}
+	}).
+	when('/tool/new', {
 		templateUrl: 'partials/tools-new.html',
 		controller: 'HomeCtrl',
 		resolve: {isAuth}
 	}).
-	otherwise('/home');
+	otherwise('/');
 
 });
 app.run(($location) => {

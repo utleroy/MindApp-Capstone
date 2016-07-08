@@ -37,14 +37,14 @@ app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 		});
 	}
 
-	$scope.addNewTool = function(newTool) {
-		NotesFactory.postNewMindTool($scope.newTool)
-		.then(function(response) {
-			NotesFactory.getItemList().then(function(itemCollection) {
-				$scope.userTools = itemCollection;
-			})
-		})
-	}
+	// $scope.addNewTool = function(newTool) {
+	// 	NotesFactory.postNewMindTool($scope.newTool)
+	// 	.then(function(response) {
+	// 		NotesFactory.getItemList().then(function(itemCollection) {
+	// 			$scope.userTools = itemCollection;
+	// 		})
+	// 	})
+	// }
 
 });
 

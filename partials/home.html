@@ -9,14 +9,15 @@
 				</a>
 				<div id="modal1" class="modal">
 					<div class="modal-content">
-						<div class="divider"></div>							
-						<div ng-repeat="note in userNotes " contenteditable="true">
-							<label>
-								<span>{{note.note}}
-									<a ng-href="#/home{{items.id}}" data-method="delete" ng-click="itemDelete(note.id)">delete</a>
-								</span>
-							</label>
+						<div class="divider"></div>	
+
+
+						<div ng-repeat="note in userNotes">
+								<div><a ng-href="#/userNotes{{note.id}}">{{note.note}}</a></div>
+									<button class="btn" data-method="delete" ng-click="itemDelete(note.id)">delete</button>
 						</div>
+
+
 						<div class="divider"></div>
 
 						<input type="text" ng-model="newNote"  size="30"
