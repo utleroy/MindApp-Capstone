@@ -5,15 +5,15 @@
 		<div class="col s12">
 			<div id="containment-wrapper">				
 				<a contenteditable="true" id="draggable" class="waves-effect waves-light btn modal-trigger" href="#modal1">
-				
+
 				</a>
 				<div id="modal1" class="modal">
 					<div class="modal-content">
 						<div class="divider"></div>							
-						<div ng-repeat="note in userNotes">
+						<div ng-repeat="note in userNotes " contenteditable="true">
 							<label>
 								<span>{{note.note}}
-									<a ng-href="#/home{{items.id}}" data-method="delete" ng-click="itemDelete(note.id)">del</a>
+									<a ng-href="#/home{{items.id}}" data-method="delete" ng-click="itemDelete(note.id)">delete</a>
 								</span>
 							</label>
 						</div>
@@ -33,29 +33,41 @@
 		</div>
 	</div>
 
-		<!-- <div class="col s6">
-			<div class="collapsible" data-collapsible="accordion">
-				<li>			
-					<div class="collapsible-header"><i class="material-icons"></i>Index</div>
-					<div class="collapsible-body">
-						<div class="divider"></div>							
-						<div ng-repeat="note in userNotes">
-							<label>
-								<span>{{note.note}}
-									<a ng-href="#/home{{items.id}}" data-method="delete" ng-click="itemDelete(note.id)">del</a>
-								</span>
-							</label>
-						</div>
-						<div class="divider"></div>
+		
 
-						<input type="text" ng-model="newNote"  size="30"
-						placeholder="add new form here">
-						<input class="btn" type="submit" value="add" ng-click="addNewNote()">
 
-					</div>
-				</li>
-			</div>
-		</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

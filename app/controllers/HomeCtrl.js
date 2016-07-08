@@ -15,7 +15,7 @@ app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 	$scope.userTools = [];
 
 	NotesFactory.getItemList().then(function(itemCollection){
-		$scope.userNotes = itemCollection;
+		$scope.userNotes.userTools = itemCollection;
 	});
 
 	$scope.itemDelete = function(itemId){

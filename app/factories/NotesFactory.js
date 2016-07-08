@@ -50,6 +50,25 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
     });
   };
 
+  var hold = function(holdTools){
+    let user = AuthFactory.getUser();
+    console.log(user, "user activity")
+    return $q(function(resolve, reject) {
+      $http.post(
+        firebaseURL + "items.json",
+        JSON.stringify({
+          tool: holdTools,
+          uid: user.uid
+        })
+        )
+      .success(
+        function(objectFromFirebase) {
+          resolve(objectFromFirebase);
+        }
+        );
+    });
+  };
+
     var postNewMindTool = function(newTool){
     let user = AuthFactory.getUser();
     console.log(user, "new tools")
@@ -74,7 +93,7 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
 
 
 
-  return {postNewMindTool:postNewMindTool, postNewNote:postNewNote, deleteItem:deleteItem, getItemList:getItemList};
+  return {hold:hold, postNewMindTool:postNewMindTool, postNewNote:postNewNote, deleteItem:deleteItem, getItemList:getItemList};
 
 });
 
