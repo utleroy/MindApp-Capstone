@@ -10,6 +10,10 @@ app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 
 	$scope.userNotes = [];
 
+	$scope.newTool = "";
+
+	$scope.userTools = [];
+
 	NotesFactory.getItemList().then(function(itemCollection){
 		$scope.userNotes = itemCollection;
 	});
@@ -31,6 +35,15 @@ app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 				$scope.userNotes = itemCollection;
 			});
 		});
+	}
+
+	$scope.addNewTool = function(newTool) {
+		NotesFactory.postNewMindTool($scope.newTool)
+		.then(function(response) {
+			NotesFactory.getItemList().then(function(itemCollection) {
+				$scope.userTools = itemCollection;
+			})
+		})
 	}
 
 });

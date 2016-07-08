@@ -37,6 +37,11 @@ app.config(function($routeProvider){
 		controller: 'HomeCtrl',
 		resolve: {isAuth}
 	}).
+	when('/items/new', {
+		templateUrl: 'partials/tools-new.html',
+		controller: 'HomeCtrl',
+		resolve: {isAuth}
+	}).
 	otherwise('/home');
 
 });
