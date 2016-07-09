@@ -50,6 +50,22 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
     });
   };
 
+  var updateNote = function (itemId, newNote) {
+    let user = AuthFactory.getUser();
+    return $q(function(resolve, reject) {
+      $http.put(
+        firebaseURL + "items/" + itemId + ".json",
+        JSON.stringify({
+          note: newNote,
+          uid: user.uid
+        })
+        )
+      .success(
+        function(objectFromFirebase) {
+          resolve(objectFromFirebase);
+        })
+    })
+  }
   // var hold = function(holdTools){
   //   let user = AuthFactory.getUser();
   //   console.log(user, "user activity")
@@ -93,7 +109,7 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
 
 
 
-  return {postNewNote:postNewNote, deleteItem:deleteItem, getItemList:getItemList};
+  return {updateNote:updateNote, postNewNote:postNewNote, deleteItem:deleteItem, getItemList:getItemList};
 
 });
 

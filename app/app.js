@@ -24,6 +24,26 @@ let isAuth = (AuthFactory) => new Promise ((resolve, reject) => {
 
 app.config(function($routeProvider){
 	$routeProvider.
+	when('/', {
+		templateUrl: 'partials/home.html',
+		controller: 'HomeCtrl',
+		resolve: {isAuth}
+	}).
+	when('/userNotes/:itemId', {
+		templateUrl: 'partials/details.html',
+		controller: 'formViewCtrl',
+		resolve: {isAuth}
+	}).
+	when('/userNotes/:itemId/edit', {
+		templateUrl: 'partials/home.html',
+		controller: 'formViewCtrl',
+		resolve: {isAuth}
+	}).
+	when('/tool/new', {
+		templateUrl: 'partials/tools-new.html',
+		controller: 'HomeCtrl',
+		resolve: {isAuth}
+	}).
 	when('/login', {
 		templateUrl: 'partials/login.html',
 		controller: 'LoginCtrl'
@@ -31,26 +51,6 @@ app.config(function($routeProvider){
 	when('/logout', {
 		templateUrl: 'partials/login.html',
 		controller: 'LoginCtrl'
-	}).
-	when('/home', {
-		templateUrl: 'partials/home.html',
-		controller: 'HomeCtrl',
-		resolve: {isAuth}
-	}).
-	when('/userNotes:itemId', {
-		templateUrl: 'partials/details.html',
-		controller: 'formViewCtrl',
-		resolve: {isAuth}
-	}).
-	when('/note:itemId/edit', {
-		templateUrl: 'partials/home.html',
-		controller: 'FormCtrl',
-		resolve: {isAuth}
-	}).
-	when('/tool/new', {
-		templateUrl: 'partials/tools-new.html',
-		controller: 'HomeCtrl',
-		resolve: {isAuth}
 	}).
 	otherwise('/');
 

@@ -1,4 +1,4 @@
-app.controller("NoteEditCtrl", function($scope, $location, $routeParams, NotesFactory) {
+app.controller("FormCtrl", function($scope, $location, $routeParams, NotesFactory) {
 	$scope.title = "Edit Note";
 	$scope.submitButtonText = "Update";
 	$scope.updatedNote = {};
@@ -9,10 +9,10 @@ app.controller("NoteEditCtrl", function($scope, $location, $routeParams, NotesFa
 	});
 
 	$scope.addNewItem = function() {
-		NotesFactory.updateItem($routeParams.itemId, $scope.updatedNote)
+		NotesFactory.updateNote($routeParams.itemId, $scope.updatedNote)
 		.then(function successCallback(response) {
 			console.log("YEAH", response);
-			$location.url("/home");
+			$location.url("/userNotes");
 		})
 	}
 })

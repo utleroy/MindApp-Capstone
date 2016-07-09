@@ -4,16 +4,16 @@
 	<div class="row">
 		<div class="col s12">
 			<div id="containment-wrapper">				
-				<a contenteditable="true" id="draggable" class="waves-effect waves-light btn modal-trigger" href="#modal1">
+				<!-- <a contenteditable="true" id="draggable" class="waves-effect waves-light btn">
 
-				</a>
-				<div id="modal1" class="modal">
-					<div class="modal-content">
+				</a> -->
+				<!-- <div id="modal1" class="modal">
+					<div class="modal-content"> -->
 						<div class="divider"></div>	
 
 
 						<div ng-repeat="note in userNotes">
-								<div><a ng-href="#/userNotes{{note.id}}">{{note.note}}</a></div>
+								<div class="col s12"><a ng-href="#/userNotes/{{note.id}}">{{note.note}}</a></div>
 									<button class="btn" data-method="delete" ng-click="itemDelete(note.id)">delete</button>
 						</div>
 
@@ -22,17 +22,21 @@
 
 						<input type="text" ng-model="newNote"  size="30"
 						placeholder="add new form here">
-						<input class="btn" type="submit" value="add" ng-click="addNewNote()">
+						<button class="btn" ng-click="addNewNote()">{{submitButtonText}}</button>
 
-					</div>
-				</div>
-				<div contenteditable="true" id="draggable" class="draggable waves-effect waves-light btn">styles</div>
+				<!-- 	</div>
+				</div> -->
+				<!-- <div contenteditable="true" id="draggable" class="draggable waves-effect waves-light btn">styles</div>
 				<div contenteditable="true" id="draggable" class="draggable waves-effect waves-light btn">css</div>
 				<div contenteditable="true" id="draggable" class="draggable waves-effect waves-light btn">scripts</div>
-				<div contenteditable="true" id="draggable" class="draggable waves-effect waves-light btn">js</div>
+				<div contenteditable="true" id="draggable" class="draggable waves-effect waves-light btn">js</div> -->
 			</div>
 		</div>
 	</div>
+
+	<!-- <a contenteditable="true" id="draggable" class="waves-effect waves-light btn modal-trigger" href="#modal1">
+
+				</a> -->
 
 		
 

@@ -1,34 +1,22 @@
 "use strict";
 
-app.controller('FormController', function($scope, AuthFactory, NotesFactory) {
-    var formList = this;
-    formList.forms = [];
+app.controller('addNewCtrl', function($scope, $location, AuthFactory, NotesFactory) {
+  $scope.title = "New Note";
+  $scope.submitButtonText = "Add New";
+  $scope.newNote = {
+    note: "",
+    uid: ""
+  };
 
-    NotesFactory.getItemList().then(function(itemCollection){
-    $scope.items = itemCollection;
-  });
- 
-    formList.addForm = function() {
-      formList.forms.push({text:formList.formText, done:false});
-      formList.formText = '';
-    };
- 
-    formList.remaining = function() {
-      var count = 0;
-      angular.forEach(formList.forms, function(form) {
-        count += form.done ? 0 : 1;
-      });
-      return count;
-    };
- 
-    formList.archive = function() {
-      var oldForms = formList.forms;
-      formList.forms = [];
-      angular.forEach(oldForms, function(form) {
-        if (!form.done) formList.forms.push(form);
-      });
-    };
-  });
+  $scope.addNewItem = function() {
+    NotesFactory.newNote($scope.newNote)
+    .then(function name (response) {
+      console.log("boom", response);
+      $location.url("/home");
+    })
+  }
+
+    }
 
 
   

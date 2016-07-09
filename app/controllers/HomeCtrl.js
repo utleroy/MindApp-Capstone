@@ -4,18 +4,18 @@
 app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 
 
-	$scope.items = [];
 
-	$scope.newNote = "";
+	// $scope.userNotes = [];
 
-	$scope.userNotes = [];
-
-	$scope.newTool = "";
-
-	$scope.userTools = [];
+	$scope.title = "New Note";
+  $scope.submitButtonText = "Add New";
+  $scope.newNote = {
+    note: "",
+    uid: ""
+  };
 
 	NotesFactory.getItemList().then(function(itemCollection){
-		$scope.userNotes.userTools = itemCollection;
+		$scope.userNotes = itemCollection;
 	});
 
 	$scope.itemDelete = function(itemId){
@@ -30,12 +30,11 @@ app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 
 	$scope.addNewNote = function() {
 		NotesFactory.postNewNote($scope.newNote)
-		.then(function(response) {
-			NotesFactory.getItemList().then(function(itemCollection){
-				$scope.userNotes = itemCollection;
+		.then(function someName(response) {
+			$location.url("/home");
 			});
-		});
-	}
+		};
+	})
 
 	// $scope.addNewTool = function(newTool) {
 	// 	NotesFactory.postNewMindTool($scope.newTool)
@@ -46,5 +45,5 @@ app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 	// 	})
 	// }
 
-});
+;
 
