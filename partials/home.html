@@ -1,48 +1,105 @@
 <h4>Mind View</h4>
+
 <div class="container">
 
 	<div class="row">
-		<div class="col s10" id="draggable">
-			<div class="collapsible" data-collapsible="accordion">
- 				<li>			
- 					<div class="collapsible-header"></div>
- 					<div class="collapsible-body">
- 						<div class="divider"></div>							
- 						<div ng-repeat="note in userNotes">
-								<div><a ng-href="#/userNotes/{{note.id}}">{{note.note}}</a></div>
-									<button class="btn" data-method="delete" ng-click="itemDelete(note.id)">delete</button>
+		<div class="col s8" id="draggable">
+			<ul class="collapsible" data-collapsible="accordion">
+				<li>			
+					<div class="collapsible-header" contenteditable="true">Index.html</div>
+					<div class="collapsible-body">
+						<div class="divider"></div>							
+						<div ng-repeat="note in userNotes">
+							<div><a ng-href="#/userNotes/{{note.id}}">{{note.note}}</a></div>
+							<button class="btn" data-method="delete" ng-click="itemDelete(note.id)">delete</button>
 						</div>
-
-
 						<div class="divider"></div>
 
 						<input type="text" ng-model="newNote"  size="30"
 						placeholder="add new form here">
 						<button class="btn" ng-click="addNewNote()">{{submitButtonText}}</button>
- 
- 					</div>
- 				</li>
- 			</div>
- 	</div>
-					
 
-
-
-				<!-- 	</div>
-				</div> -->
-				<!-- <div contenteditable="true" id="draggable" class="draggable waves-effect waves-light btn">styles</div>
-				<div contenteditable="true" id="draggable" class="draggable waves-effect waves-light btn">css</div>
-				<div contenteditable="true" id="draggable" class="draggable waves-effect waves-light btn">scripts</div>
-				<div contenteditable="true" id="draggable" class="draggable waves-effect waves-light btn">js</div> -->
-			<!-- </div> -->
+					</div>
+				</li>
+			</ul>
 		</div>
 	</div>
 
+	<div class="row">
+		<div class="col s8" id="draggable">
+			<ul class="collapsible" data-collapsible="accordion">
+				<li>			
+					<div class="collapsible-header" contenteditable="true">CSS</div>
+					<div class="collapsible-body">
+						<div class="divider"></div>							
+						<div ng-repeat="note in userNotes">
+							<div><a ng-href="#/userNotes/{{note.id}}">{{note.note}}</a></div>
+							<button class="btn" data-method="delete" ng-click="itemDelete(note.id)">delete</button>
+						</div>
+						<div class="divider"></div>
+
+						<input type="text" ng-model="newNote"  size="30"
+						placeholder="add new form here">
+						<button class="btn" ng-click="addNewNote()">{{submitButtonText}}</button>
+						
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s8" id="draggable">
+			<ul class="collapsible" data-collapsible="accordion">
+				<li>			
+					<div class="collapsible-header" contenteditable="true">Styles</div>
+					<div class="collapsible-body">
+						<div class="divider"></div>							
+						<div ng-repeat="note in userNotes">
+							<div><a ng-href="#/userNotes/{{note.id}}">{{note.note}}</a></div>
+							<button class="btn" data-method="delete" ng-click="itemDelete(note.id)">delete</button>
+						</div>
+						<div class="divider"></div>
+
+						<input type="text" ng-model="newNote"  size="30"
+						placeholder="add new form here">
+						<button class="btn" ng-click="addNewNote()">{{submitButtonText}}</button>
+						
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s8" id="draggable">
+			<ul class="collapsible" data-collapsible="accordion">
+				<li>			
+					<div class="collapsible-header" contenteditable="true"></div>
+					<div class="collapsible-body">
+						<div class="divider"></div>							
+						<div ng-repeat="note in userNotes">
+							<div><a ng-href="#/userNotes/{{note.id}}">{{note.note}}</a></div>
+							<button class="btn" data-method="delete" ng-click="itemDelete(note.id)">delete</button>
+						</div>
+						<div class="divider"></div>
+
+						<input type="text" ng-model="newNote"  size="30"
+						placeholder="add new form here">
+						<button class="btn" ng-click="addNewNote()">{{submitButtonText}}</button>
+						
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
 	<!-- <a contenteditable="true" id="draggable" class="waves-effect waves-light btn modal-trigger" href="#modal1">
 
-				</a> -->
-
-		
+</a> -->
 
 
 
@@ -79,39 +136,38 @@
 
 
 
-
-	<script>
-		var positions = JSON.parse(localStorage.positions || "{}");
-		$(function () {
-			var d = $("[id=draggable]").attr("id", function (i) {
-				return "draggable_" + i
-			})
-			$.each(positions, function (id, pos) {
-				$("#" + id).css(pos)
-			})
-			d.draggable({
-				containment: "#containment-wrapper",
-				scroll: false,
-				stop: function (event, ui) {
-					positions[this.id] = ui.position
-					localStorage.positions = JSON.stringify(positions)
-				}
-			});
+<script>
+	var positions = JSON.parse(localStorage.positions || "{}");
+	$(function () {
+		var d = $("[id=draggable]").attr("id", function (i) {
+			return "draggable_" + i
+		})
+		$.each(positions, function (id, pos) {
+			$("#" + id).css(pos)
+		})
+		d.draggable({
+			containment: "#containment-wrapper",
+			scroll: false,
+			stop: function (event, ui) {
+				positions[this.id] = ui.position
+				localStorage.positions = JSON.stringify(positions)
+			}
 		});
+	});
 
-	</script>
+</script>
 
 
-	<script>
-		$(document).ready(function(){
-			$('.modal-trigger').leanModal();
+<script>
+	$(document).ready(function(){
+		$('.modal-trigger').leanModal();
+	});
+</script>
+
+<script>            
+	$(document).ready(function() {
+		$('.collapsible').collapsible({
+			accordion: true 
 		});
-	</script>
-
-	<script>            
-		$(document).ready(function() {
-			$('.collapsible').collapsible({
-				accordion: true 
-			});
-		});
-	</script>
+	});
+</script>

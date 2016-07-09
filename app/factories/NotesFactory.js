@@ -92,7 +92,7 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
       $http.post(
         firebaseURL + "items.json",
         JSON.stringify({
-          tool: newTool,
+          tool: "",
           uid: user.uid
         })
         )
