@@ -10,7 +10,7 @@ app.controller("HomeCtrl", function($scope, $location, $http, $sce, NotesFactory
 	$scope.userTools = [];
 
 	$scope.newTool = "";
-	$scope.tool1 = false;
+	
  
 
 
@@ -55,12 +55,7 @@ app.controller("HomeCtrl", function($scope, $location, $http, $sce, NotesFactory
 		})
 	}
 
-
-        // $scope.renderHtml = function (htmlCode) {
-        //     return $sce.trustAsHtml(htmlCode);
-        // };
-
-        // $scope.body = '<div style="width:200px; height:200px; border:1px solid blue;"></div>'; 
+ 
 
 
 	})

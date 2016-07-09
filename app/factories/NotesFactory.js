@@ -87,30 +87,29 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
   //   });
   // };
 
-  //   var postNewMindTool = function(newTool){
-  //   let user = AuthFactory.getUser();
-  //   console.log(user, "new tools")
-  //   return $q(function(resolve, reject) {
-  //     $http.post(
-  //       firebaseURL + "items.json",
-  //       JSON.stringify({
-  //         tool: newTool,
-  //         note: newNote,
-  //         uid: user.uid
-  //       })
-  //       )
-  //     .success(
-  //       function(objectFromFirebase) {
-  //         resolve(objectFromFirebase);
-  //       }
-  //       );
-  //   });
-  // }
+    var postNewMindTool = function(newTool){
+    let user = AuthFactory.getUser();
+    console.log(user, "new tools")
+    return $q(function(resolve, reject) {
+      $http.post(
+        firebaseURL + "items.json",
+        JSON.stringify({
+          tool: newTool,
+          uid: user.uid
+        })
+        )
+      .success(
+        function(objectFromFirebase) {
+          resolve(objectFromFirebase);
+        }
+        );
+    });
+  }
 
 
 
 
-  return {updateNote:updateNote, postNewNote:postNewNote, deleteItem:deleteItem, getItemList:getItemList};
+  return {postNewMindTool:postNewMindTool, updateNote:updateNote, postNewNote:postNewNote, deleteItem:deleteItem, getItemList:getItemList};
 
 });
 
