@@ -10,6 +10,7 @@ app.controller("HomeCtrl", function($scope, $location, $http, $sce, NotesFactory
 	$scope.userTools = [];
 
 	$scope.newTool = "";
+	$scope.tool1 = false;
  
 
 
