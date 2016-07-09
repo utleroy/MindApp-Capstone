@@ -10,20 +10,19 @@
 					<div class="input-field col s6">
 					
 						<input value="Tool Path Name" id="first_name2" type="text" class="validate" ng-model="newTool" ng-href="#/formNotes">
-						<label class="active" for="first_name2">Name Your Directory or File</label>
 					</div>
-					<div><button class="btn" value="add" type="submit" ng-click="addNewTool()"></button></div>
+					<div><button class="btn" value="add" type="submit" ng-click="addNewTool()">{{submitButtonText}}</button></div>
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
 
-<script>
+<!-- <script>
 	$(document).ready(function() {
 		Materialize.updateTextFields();
 	});
-</script>
+</script> -->
 
 <!-- <div ng-repeat="tool in newTool">				
 				<button><a ng-href="#items/{{tool.id}}" id="draggable" class="waves-effect waves-light btn modal-trigger" href="#modal1"></a></button>
