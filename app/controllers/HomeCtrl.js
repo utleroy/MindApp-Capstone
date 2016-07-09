@@ -24,6 +24,10 @@ app.controller("HomeCtrl", function($scope, $location, $http, $sce, NotesFactory
 		$scope.userNotes = itemCollection;
 	});
 
+	NotesFactory.getItemList().then(function(itemCollection){
+		$scope.userTools = itemCollection;
+	});
+
 	$scope.itemDelete = function(itemId){
 		console.log("itemId", itemId);
 		NotesFactory.deleteItem(itemId).then(function(response){

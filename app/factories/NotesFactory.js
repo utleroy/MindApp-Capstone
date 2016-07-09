@@ -31,13 +31,14 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
     });
   };
   
-  var postNewNote = function(newNote){
+  var postNewNote = function(newNote, newTool){
     let user = AuthFactory.getUser();
     console.log(user, "user activity")
     return $q(function(resolve, reject) {
       $http.post(
         firebaseURL + "items.json",
         JSON.stringify({
+          tool: newTool,
           note: newNote,
           uid: user.uid
         })
@@ -50,12 +51,13 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
     });
   };
 
-  var updateNote = function (itemId, newNote) {
+  var updateNote = function (itemId, newNote, newTool) {
     let user = AuthFactory.getUser();
     return $q(function(resolve, reject) {
       $http.put(
         firebaseURL + "items/" + itemId + ".json",
         JSON.stringify({
+          tool: newTool,
           note: newNote,
           uid: user.uid
         })
@@ -85,29 +87,30 @@ app.factory("NotesFactory", function ($q, $http, firebaseURL, AuthFactory) {
   //   });
   // };
 
-    var postNewMindTool = function(newTool){
-    let user = AuthFactory.getUser();
-    console.log(user, "new tools")
-    return $q(function(resolve, reject) {
-      $http.post(
-        firebaseURL + "items.json",
-        JSON.stringify({
-          tool: "",
-          uid: user.uid
-        })
-        )
-      .success(
-        function(objectFromFirebase) {
-          resolve(objectFromFirebase);
-        }
-        );
-    });
-  }
+  //   var postNewMindTool = function(newTool){
+  //   let user = AuthFactory.getUser();
+  //   console.log(user, "new tools")
+  //   return $q(function(resolve, reject) {
+  //     $http.post(
+  //       firebaseURL + "items.json",
+  //       JSON.stringify({
+  //         tool: newTool,
+  //         note: newNote,
+  //         uid: user.uid
+  //       })
+  //       )
+  //     .success(
+  //       function(objectFromFirebase) {
+  //         resolve(objectFromFirebase);
+  //       }
+  //       );
+  //   });
+  // }
 
 
 
 
-  return {postNewMindTool:postNewMindTool, updateNote:updateNote, postNewNote:postNewNote, deleteItem:deleteItem, getItemList:getItemList};
+  return {updateNote:updateNote, postNewNote:postNewNote, deleteItem:deleteItem, getItemList:getItemList};
 
 });
 
