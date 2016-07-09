@@ -5,7 +5,13 @@ app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 
 
 
-	// $scope.userNotes = [];
+	$scope.title = "New Tool";
+	$scope.buttonText = "Add Tool";
+	$scope.userTools = [];
+
+	$scope.newTool = "";
+ 
+
 
 	$scope.title = "New Note";
   $scope.submitButtonText = "Add New";
@@ -34,16 +40,15 @@ app.controller("HomeCtrl", function($scope, $location, $http, NotesFactory) {
 			$location.url("/home");
 			});
 		};
+
+	$scope.addNewTool = function(newTool) {
+		NotesFactory.postNewMindTool($scope.newTool)
+		.then(function(response) {
+			NotesFactory.getItemList().then(function(itemCollection) {
+				$scope.userTools = itemCollection;
+			})
+		})
+	}
+
 	})
-
-	// $scope.addNewTool = function(newTool) {
-	// 	NotesFactory.postNewMindTool($scope.newTool)
-	// 	.then(function(response) {
-	// 		NotesFactory.getItemList().then(function(itemCollection) {
-	// 			$scope.userTools = itemCollection;
-	// 		})
-	// 	})
-	// }
-
-;
 
