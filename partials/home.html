@@ -1,14 +1,20 @@
 <h4>Mind View</h4>
 
+<html ng-app="app">
 
-<div class="container" ng-controller="HomeCtrl">
+
+<div ng-controller="HomeCtrl">
+
+
+
+<div class="container">
 
 	<div class="row">
 	<!-- <a href="#/" ng-click="tool1 = !tool1" class="btn-floating btn-tiny waves-effect waves-light teal lighten-5"><i class="material-icons">add</i>>1</a> -->
 		<div class="col s8" id="draggable">
 			<ul class="collapsible" data-collapsible="accordion">
 				<li>			
-					<div class="collapsible-header" contenteditable="true">Index.html</div>
+					<div class="collapsible-header" contenteditable="true"><a href="#" editable-text="newNote.name">{{ newNote.name }}</a></div>
 						<!-- <div ng-repeat="tool in userTools">
 					<div><a ng-href="#/userNotes/{{tool.id}}">{{tool.tool}}</a></div>
 
@@ -30,98 +36,8 @@
 		</ul>
 	</div>
 </div>
-
-<div class="row">
-	<div class="col s8" id="draggable">
-		<ul class="collapsible" data-collapsible="accordion">
-			<li>			
-				<div class="collapsible-header" contenteditable="true">Styles</div>
-				<div class="collapsible-body">
-					<div class="divider"></div>							
-					<div ng-repeat="note in userNotes">
-						<div><a ng-href="#/userNotes/{{note.id}}">{{note.note}}</a></div>
-						<button class="btn" data-method="delete" ng-click="itemDelete(note.id)">delete</button>
-					</div>
-					<div class="divider"></div>
-
-					<input type="text" ng-model="newNote"  size="30"
-					placeholder="add new form here">
-					<button class="btn" ng-click="addNewNote()">{{submitButtonText}}</button>
-
-				</div>
-			</li>
-		</ul>
-	</div>
 </div>
 
-<div class="row">
-	<div class="col s8" id="draggable">
-		<ul class="collapsible" data-collapsible="accordion">
-			<li>			
-				<div class="collapsible-header" contenteditable="true">CSS</div>
-				<div class="collapsible-body">
-					<div class="divider"></div>							
-					<div ng-repeat="note in userNotes">
-						<div><a ng-href="#/userNotes/{{note.id}}">{{note.note}}</a></div>
-						<button class="btn" data-method="delete" ng-click="itemDelete(note.id)">delete</button>
-					</div>
-					<div class="divider"></div>
-
-					<input type="text" ng-model="newNote"  size="30"
-					placeholder="add new form here">
-					<button class="btn" ng-click="addNewNote()">{{submitButtonText}}</button>
-
-				</div>
-			</li>
-		</ul>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col s8" id="draggable">
-		<ul class="collapsible" data-collapsible="accordion">
-			<li>			
-				<div class="collapsible-header" contenteditable="true">Scripts</div>
-				<div class="collapsible-body">
-					<div class="divider"></div>							
-					<div ng-repeat="note in userNotes">
-						<div><a ng-href="#/userNotes/{{note.id}}">{{note.note}}</a></div>
-						<button class="btn" data-method="delete" ng-click="itemDelete(note.id)">delete</button>
-					</div>
-					<div class="divider"></div>
-
-					<input type="text" ng-model="newNote"  size="30"
-					placeholder="add new form here">
-					<button class="btn" ng-click="addNewNote()">{{submitButtonText}}</button>
-
-				</div>
-			</li>
-		</ul>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col s8" id="draggable">
-		<ul class="collapsible" data-collapsible="accordion">
-			<li>			
-				<div class="collapsible-header" contenteditable="true">JS</div>
-				<div class="collapsible-body">
-					<div class="divider"></div>							
-					<div ng-repeat="note in userNotes">
-						<div><a ng-href="#/userNotes/{{note.id}}">{{note.note}}</a></div>
-						<button class="btn" data-method="delete" ng-click="itemDelete(note.id)">delete</button>
-					</div>
-					<div class="divider"></div>
-
-					<input type="text" ng-model="newNote"  size="30"
-					placeholder="add new form here">
-					<button class="btn" ng-click="addNewNote()">{{submitButtonText}}</button>
-
-				</div>
-			</li>
-		</ul>
-	</div>
-</div>
 </div>
 
 	<!-- <a contenteditable="true" id="draggable" class="waves-effect waves-light btn modal-trigger" href="#modal1">

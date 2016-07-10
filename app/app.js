@@ -2,8 +2,8 @@ var app1 = angular.module("MindApp", ["ngRoute"]);
 app1.controller("MindController", function($scope) {
 });
 
-var app2 = angular.module("MindApp2", ["ngDragDrop"]);
-app2.controller("DragDropController", function($scope) {
+var app2 = angular.module("MindApp2", ["xeditable"]);
+app2.controller("ContentEditableController", function($scope) {
 });
 
 

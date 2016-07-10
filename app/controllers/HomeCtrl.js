@@ -5,6 +5,12 @@ app.controller("HomeCtrl", function($scope, $location, $http, $sce, NotesFactory
 
 
 
+  $scope.user = {
+    name: "",
+  };  
+
+
+
 	$scope.title = "New Tool";
 	$scope.buttonText = "Add Tool";
 	$scope.userTools = [];
@@ -17,6 +23,7 @@ app.controller("HomeCtrl", function($scope, $location, $http, $sce, NotesFactory
 	$scope.title = "New Note";
   $scope.submitButtonText = "Add New";
   $scope.newNote = {
+  	name: "select tool name",
     note: "",
     uid: ""
   };
